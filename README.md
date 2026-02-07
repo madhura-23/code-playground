@@ -1,4 +1,5 @@
-💜 Code Playground
+💜 Code Playground![Uploading CoreKeeperCoreGIF.gif…]()
+
 <p align="center"> <img src="https://img.shields.io/badge/Status-Actively%20Building-7B2CBF?style=for-the-badge" /> <img src="https://img.shields.io/badge/Theme-Purple%20Vibes-9D4EDD?style=for-the-badge" /> </p> <p align="center"> <img src="https://img.shields.io/badge/Python-Experimenting-7B2CBF?style=flat-square&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Machine%20Learning-Exploring-9D4EDD?style=flat-square&logo=scikitlearn&logoColor=white" /> <img src="https://img.shields.io/badge/Web%20Dev-Practice-C77DFF?style=flat-square&logo=html5&logoColor=white" /> <img src="https://img.shields.io/badge/SQL-Queries-5A189A?style=flat-square&logo=mysql&logoColor=white" /> </p>
 🎮 Welcome to Code Playground
 
@@ -45,27 +46,27 @@ This is a playground, not a polished product — and that’s the point 💜
 
 💜 Aesthetic & Vibe
 
-Purple-themed creativity
+- Purple-themed creativity
 
-Growth mindset
+- Growth mindset
 
-Curiosity-driven coding
+- Curiosity-driven coding
 
-Progress > Perfection
+- Progress > Perfection
 
 📌 Disclaimer
 
 Some projects may be:
 
-Small
+- Small
 
-Incomplete
+- Incomplete
 
-Experimental
+- Experimental
 
 Each folder represents learning in action, not final products.
 
-👩‍💻 About Me
+👩‍💻 About Me👻:
 
 I’m Madhura, a final-year AI Engineering student exploring AI, ML, Web Development, and Software Engineering, aiming to build strong fundamentals and impactful projects.
 
