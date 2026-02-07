@@ -1,118 +1,75 @@
-# SYNOPSIS
-A sync prompt for node. very simple,Yet useful.
+💜 Code Playground
+<p align="center"> <img src="https://img.shields.io/badge/Status-Actively%20Building-7B2CBF?style=for-the-badge" /> <img src="https://img.shields.io/badge/Theme-Purple%20Vibes-9D4EDD?style=for-the-badge" /> </p> <p align="center"> <img src="https://img.shields.io/badge/Python-Experimenting-7B2CBF?style=flat-square&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Machine%20Learning-Exploring-9D4EDD?style=flat-square&logo=scikitlearn&logoColor=white" /> <img src="https://img.shields.io/badge/Web%20Dev-Practice-C77DFF?style=flat-square&logo=html5&logoColor=white" /> <img src="https://img.shields.io/badge/SQL-Queries-5A189A?style=flat-square&logo=mysql&logoColor=white" /> </p>
+🎮 Welcome to Code Playground
 
-Works on Linux, OS X and Windows.
+Code Playground is my personal experimental space where I build, test, and learn through small projects, ML experiments, games, UI pages, and SQL practice.
 
-# BASIC MODE
-```js
+This repo reflects my learning journey — messy at times, exciting always, and constantly evolving 🚀
 
-var prompt = require('prompt-sync')();
-//
-// get input from the user.
-//
-var n = prompt('How many more times? ');
-```
-# WITH HISTORY
+🧠 What’s Inside
 
-History is an optional extra, to use simply install the history plugin. 
+💡 Machine Learning Experiments
 
-```sh
-npm install --save prompt-sync-history
-```
+Model trials & concept testing
 
-```js
-var prompt = require('prompt-sync')({
-  history: require('prompt-sync-history')() //open history file
-});
-//get some user input
-var input = prompt()
-prompt.history.save() //save history back to file
-```
+Practice scripts and notebooks
 
-See the [prompt-sync-history](http://npm.im/prompt-sync-history) module
-for options, or fork it for customized behaviour. 
+🎮 Mini Games
 
-# API
+Logic-based & beginner-friendly games
 
-## `require('prompt-sync')(config) => prompt` 
+Built for fun + fundamentals
 
-Returns an instance of the `prompt` function.
-Takes `config` option with the following possible properties
+🌐 Web / UI Practice
 
-`sigint`: Default is `false`. A ^C may be pressed during the input process to abort the text entry. If sigint it `false`, prompt returns `null`. If sigint is `true` the ^C will be handled in the traditional way: as a SIGINT signal causing process to exit with code 130.
+Signup & login pages
 
-`eot`: Default is `false`. A ^D pressed as the first character of an input line causes prompt-sync to echo `exit` and exit the process with code 0.
+HTML, CSS, JS experiments
 
-`autocomplete`: A completer function that will be called when user enters TAB to allow for autocomplete. It takes a string as an argument an returns an array of strings that are possible matches for completion. An empty array is returned if there are no matches.
+🗄️ SQL Practice Zone
 
-`history`: Takes an object that supplies a "history interface", see [prompt-sync-history](http://npm.im/prompt-sync-history) for an example.
+Query solving
 
-## `prompt(ask, value, opts)`
+Interview-style SQL questions
 
-`ask` is the label of the prompt, `value` is the default value
-in absence of a response. 
+Database fundamentals
 
-The `opts` argument can also be in the first or second parameter position.
+🛠 Tech Stack
+<p> <img src="https://img.shields.io/badge/Python-7B2CBF?style=for-the-badge&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Java-9D4EDD?style=for-the-badge&logo=java&logoColor=white" /> <img src="https://img.shields.io/badge/C%2FC++-C77DFF?style=for-the-badge&logo=cplusplus&logoColor=white" /> <img src="https://img.shields.io/badge/SQL-5A189A?style=for-the-badge&logo=mysql&logoColor=white" /> <img src="https://img.shields.io/badge/JavaScript-7B2CBF?style=for-the-badge&logo=javascript&logoColor=white" /> </p>
+🎯 Why This Repo Exists
 
-Opts can have the following properties
+✨ Learn by doing
+✨ Experiment without pressure
+✨ Build consistency
+✨ Track progress publicly
+✨ Improve problem-solving & creativity
 
-`echo`: Default is `'*'`. If set the password will be masked with the specified character. For hidden input, set echo to `''` (or use `prompt.hide`).
+This is a playground, not a polished product — and that’s the point 💜
 
-`autocomplete`: Overrides the instance `autocomplete` function to allow for custom 
-autocompletion of a particular prompt.
+💜 Aesthetic & Vibe
 
-`value`: Same as the `value` parameter, the default value for the prompt. If `opts`
-is in the third position, this property will *not* overwrite the `value` parameter.
+Purple-themed creativity
 
-`ask`: Sames as the `value` parameter. The prompt label. If `opts` is not in the first position, the `ask` parameter will *not* be overridden by this property.
+Growth mindset
 
-## `prompt.hide(ask)`
+Curiosity-driven coding
 
-Convenience method for creating a standard hidden password prompt, 
-this is the same as `prompt(ask, {echo: ''})`
+Progress > Perfection
 
+📌 Disclaimer
 
-# LINE EDITING
-Line editing is enabled in the non-hidden mode. (use up/down arrows for history and backspace and left/right arrows for editing)
+Some projects may be:
 
-History is not set when using hidden mode.
+Small
 
-# EXAMPLES
+Incomplete
 
-```js
-  //basic:
-  console.log(require('prompt-sync')()('tell me something about yourself: '))
+Experimental
 
-  var prompt = require('prompt-sync')({
-    history: require('prompt-sync-history')(),
-    autocomplete: complete(['hello1234', 'he', 'hello', 'hello12', 'hello123456']),
-    sigint: false
-  });
+Each folder represents learning in action, not final products.
 
-  var value = 'frank';
-  var name = prompt('enter name: ', value);
-  console.log('enter echo * password');
-  var pw = prompt({echo: '*'});
-  var pwb = prompt('enter hidden password (or don\'t): ', {echo: '', value: '*pwb default*'})
-  var pwc = prompt.hide('enter another hidden password: ')
-  var autocompleteTest = prompt('custom autocomplete: ', {
-    autocomplete: complete(['bye1234', 'by', 'bye12', 'bye123456'])
-  });
+👩‍💻 About Me
 
-  prompt.history.save();
+I’m Madhura, a final-year AI Engineering student exploring AI, ML, Web Development, and Software Engineering, aiming to build strong fundamentals and impactful projects.
 
-  console.log('\nName: %s\nPassword *: %s\nHidden password: %s\nAnother Hidden password: %s', name, pw, pwb, pwc);
-  console.log('autocomplete2: ', autocompleteTest);
-
-  function complete(commands) {
-    return function (str) {
-      var i;
-      var ret = [];
-      for (i=0; i< commands.length; i++) {
-        if (commands[i].indexOf(str) == 0)
-          ret.push(commands[i]);
-      }
-      return ret;
-    };
-  };
-```
+If this repo helped or inspired you, consider giving it a ⭐
