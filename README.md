@@ -9,7 +9,6 @@ Machine Learning, mini games, frontend UI, and SQL problem-solving.
 
 This repo is about growth over perfection — learning in public and shipping consistently 🚀
 
-📂 Folder-Wise Contents
 code-playground/
 │
 ├── 📊 ML-Experiments/
@@ -33,6 +32,7 @@ code-playground/
 │
 ├── 📄 README.md
 └── ⚙️ misc-experiments/
+
 
 
 (Folder names may evolve as I learn and add more projects.)
