@@ -1,6 +1,6 @@
 💜 Code Playground!
 <p align="center">
-  <img src="assets/code_playground_animation.gif" width="500" />
+  <img src="code_playground_animation.gif" width="500" />
 </p>
 <p align="center">
   <i>Experimenting, learning, and building — one commit at a time 💜</i>
