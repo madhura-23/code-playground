@@ -1,4 +1,12 @@
-                                                         💜 Code Playground! 
+                                                      
+                                                             Code Playground 💜
+
+<p align="center">
+  <img src="https://img.shields.io/github/stars/madhura-23/code-playground?style=for-the-badge&color=8b5cf6" />
+  <img src="https://img.shields.io/github/forks/madhura-23/code-playground?style=for-the-badge&color=7c3aed" />
+  <img src="https://img.shields.io/github/last-commit/madhura-23/code-playground?style=for-the-badge&color=a855f7" />
+</p>
+
 <p align="center">
   <img src="codeplayground Madz.png" width="500" />
 </p>
