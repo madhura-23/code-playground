@@ -1,2 +1,0 @@
-I am a final year BTech student skilled in Python, Java, SQL, and Machine Learning.
-I have experience with Git, Data Structures, and basic NLP.

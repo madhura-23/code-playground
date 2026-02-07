@@ -1,5 +1,0 @@
-fastapi
-uvicorn
-streamlit
-openai
-requests
