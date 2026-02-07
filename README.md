@@ -1,5 +1,6 @@
-                                                      
-                                                             Code Playground 💜
+<h1 align="center">Code Playground 💜</h1>
+
+
 
 <p align="center">
   <img src="https://img.shields.io/github/stars/madhura-23/code-playground?style=for-the-badge&color=8b5cf6" />
@@ -68,10 +69,6 @@ This is a playground, not a polished product — and that’s the point 💜
 - Curiosity-driven coding
 
 - Progress > Perfection
-
-  <p align="center">
-  <img src="code_playground_animation.gif" width="500" />
-</p>
 
 
 📌 Disclaimer
