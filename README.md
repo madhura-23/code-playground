@@ -1,5 +1,5 @@
 # SYNOPSIS
-A sync prompt for node. very simple. no C++ bindings and no bash scripts.
+A sync prompt for node. very simple,Yet useful.
 
 Works on Linux, OS X and Windows.
 
