@@ -1,9 +1,9 @@
-                                                                                  <p align="center"> 💜 Code Playground! </p>
+                                                         💜 Code Playground! 
 <p align="center">
   <img src="codeplayground Madz.png" width="500" />
 </p>
 <p align="center">
-  <i>Experimenting, learning, and building — one commit at a time 💜</i>
+  <i><b>Experimenting, learning, and building — one commit at a time 💜</b></i>
 </p>
 
 
