@@ -5,34 +5,31 @@
 Code Playground is my personal experimental space where I build, test, and learn through small projects, ML experiments, games, UI pages, and SQL practice.
 
 This repo reflects my learning journey — messy at times, exciting always, and constantly evolving 🚀
-
-🧠 What’s Inside
-
-💡 Machine Learning Experiments
-
-Model trials & concept testing
-
-Practice scripts and notebooks
-
-🎮 Mini Games
-
-Logic-based & beginner-friendly games
-
-Built for fun + fundamentals
-
-🌐 Web / UI Practice
-
-Signup & login pages
-
-HTML, CSS, JS experiments
-
-🗄️ SQL Practice Zone
-
-Query solving
-
-Interview-style SQL questions
-
-Database fundamentals
+```
+code-playground/
+│
+├── 📊 ML-Experiments/
+│   ├── basic_ml_models.py
+│   ├── data_preprocessing/
+│   └── practice_notebooks/
+│
+├── 🎮 Mini-Games/
+│   ├── python_games/
+│   └── logic_games/
+│
+├── 🌐 Web-Projects/
+│   ├── signup_pages/
+│   ├── login_forms/
+│   └── basic_ui_designs/
+│
+├── 🗄️ SQL-Practice/
+│   ├── basic_queries.sql
+│   ├── joins_subqueries.sql
+│   └── interview_questions.sql
+│
+├── ⚙️ misc-experiments/
+└── 📄 README.md
+```
 
 🛠 Tech Stack
 <p> <img src="https://img.shields.io/badge/Python-7B2CBF?style=for-the-badge&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Java-9D4EDD?style=for-the-badge&logo=java&logoColor=white" /> <img src="https://img.shields.io/badge/C%2FC++-C77DFF?style=for-the-badge&logo=cplusplus&logoColor=white" /> <img src="https://img.shields.io/badge/SQL-5A189A?style=for-the-badge&logo=mysql&logoColor=white" /> <img src="https://img.shields.io/badge/JavaScript-7B2CBF?style=for-the-badge&logo=javascript&logoColor=white" /> </p>
