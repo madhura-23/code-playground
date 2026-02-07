@@ -1,4 +1,11 @@
-💜 Code Playground![Uploading CoreKeeperCoreGIF.gif…]()
+💜 Code Playground!
+<p align="center">
+  <img src="assets/code_playground_animation.gif" width="500" />
+</p>
+<p align="center">
+  <i>Experimenting, learning, and building — one commit at a time 💜</i>
+</p>
+
 
 <p align="center"> <img src="https://img.shields.io/badge/Status-Actively%20Building-7B2CBF?style=for-the-badge" /> <img src="https://img.shields.io/badge/Theme-Purple%20Vibes-9D4EDD?style=for-the-badge" /> </p> <p align="center"> <img src="https://img.shields.io/badge/Python-Experimenting-7B2CBF?style=flat-square&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Machine%20Learning-Exploring-9D4EDD?style=flat-square&logo=scikitlearn&logoColor=white" /> <img src="https://img.shields.io/badge/Web%20Dev-Practice-C77DFF?style=flat-square&logo=html5&logoColor=white" /> <img src="https://img.shields.io/badge/SQL-Queries-5A189A?style=flat-square&logo=mysql&logoColor=white" /> </p>
 🎮 Welcome to Code Playground
