@@ -1,4 +1,4 @@
-💜 Code Playground!
+                                                                                  <p align="center"> 💜 Code Playground! </p>
 <p align="center">
   <img src="codeplayground Madz.png" width="500" />
 </p>
