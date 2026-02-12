@@ -1,0 +1,23 @@
+# Smart Resume Analyzer
+
+A Python-based tool that analyzes resumes by comparing skills with target job roles and provides match percentage and improvement suggestions.
+
+## Features
+- Skill extraction from resume
+- Job-role based matching
+- Match percentage calculation
+- Skill improvement suggestions
+
+## Tech Stack
+- Python
+- Basic NLP (keyword matching)
+
+## How to Run
+1. Place your resume in resume.txt
+2. Run `python analyzer.py`
+3. Select target job role
+
+## Output
+- Matched skills
+- Missing skills
+- Resume-job match percentage
