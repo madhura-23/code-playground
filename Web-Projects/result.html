@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Match Result</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0a0f1e;
+      --surface: #111827;
+      --border:  #1f2d45;
+      --accent:  #00d4ff;
+      --accent2: #7c3aed;
+      --gold:    #f59e0b;
+      --text:    #e2e8f0;
+      --muted:   #64748b;
+      --success: #10b981;
+      --danger:  #f43f5e;
+      --warn:    #f59e0b;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(0,212,255,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(124,58,237,0.08) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-decoration: none;
+      margin-bottom: 36px;
+      transition: color 0.2s;
+      animation: fadeDown 0.5s ease both;
+    }
+    .back-link:hover { color: var(--accent); }
+
+    /* ── Header ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16,185,129,0.1);
+      border: 1px solid rgba(16,185,129,0.25);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-family: 'Syne', sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--success);
+      margin-bottom: 20px;
+      animation: fadeDown 0.6s ease 0.05s both;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 48px;
+      animation: fadeDown 0.7s ease 0.1s both;
+    }
+
+    h1 span.grad {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Score Card ── */
+    .score-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+      animation: fadeUp 0.8s ease 0.2s both;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .score-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent);
+      opacity: 0.6;
+    }
+
+    /* Circular score */
+    .score-ring {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      flex-shrink: 0;
+    }
+
+    .score-ring svg {
+      transform: rotate(-90deg);
+      width: 140px;
+      height: 140px;
+    }
+
+    .score-ring circle {
+      fill: none;
+      stroke-width: 8;
+      stroke-linecap: round;
+    }
+
+    .ring-bg   { stroke: var(--border); }
+    .ring-fill { stroke: url(#scoreGrad); stroke-dasharray: 339.29; stroke-dashoffset: 339.29; transition: stroke-dashoffset 1.4s cubic-bezier(0.4,0,0.2,1) 0.5s; }
+
+    .score-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .score-number {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-pct {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .score-info { flex: 1; min-width: 200px; }
+
+    .score-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .score-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Progress bar */
+    .progress-bar-bg {
+      background: var(--border);
+      border-radius: 100px;
+      height: 8px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      width: 0%;
+      transition: width 1.4s cubic-bezier(0.4,0,0.2,1) 0.5s;
+    }
+
+    /* ── Section Cards ── */
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .section-card.green  { border-left: 3px solid var(--success); }
+    .section-card.red    { border-left: 3px solid var(--danger); }
+    .section-card.yellow { border-left: 3px solid var(--warn); }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title.green  { color: var(--success); }
+    .section-title.red    { color: var(--danger); }
+    .section-title.yellow { color: var(--warn); }
+
+    /* Skill tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .tag.green {
+      background: rgba(16,185,129,0.12);
+      border: 1px solid rgba(16,185,129,0.25);
+      color: var(--success);
+    }
+
+    .tag.red {
+      background: rgba(244,63,94,0.1);
+      border: 1px solid rgba(244,63,94,0.2);
+      color: var(--danger);
+    }
+
+    /* Suggestion list */
+    .suggestion-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+    }
+
+    .suggestion-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .suggestion-item:first-child { padding-top: 0; }
+
+    .suggestion-num {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: rgba(245,158,11,0.12);
+      border: 1px solid rgba(245,158,11,0.25);
+      color: var(--warn);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    /* ── CTA Button ── */
+    .btn-wrap {
+      text-align: center;
+      margin-top: 40px;
+      animation: fadeUp 0.8s ease 0.6s both;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-back::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .btn-back:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,212,255,0.25);
+    }
+    .btn-back:hover::before { opacity: 1; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      margin-top: 56px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      animation: fadeUp 0.8s ease 0.7s both;
+    }
+    footer span { color: var(--accent); }
+
+    /* ── Animations ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 620px) {
+      .score-card { flex-direction: column; align-items: flex-start; gap: 24px; padding: 28px 20px; }
+      .section-card { padding: 24px 18px; }
+      .score-ring { width: 110px; height: 110px; }
+      .score-ring svg { width: 110px; height: 110px; }
+      .ring-fill { stroke-dasharray: 263.89; stroke-dashoffset: 263.89; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- Back link -->
+    <a href="/" class="back-link">← Back to Analyzer</a>
+
+    <!-- Header -->
+    <div class="badge">✓ Analysis Complete</div>
+    <h1>Your Resume<br><span class="grad">Match Report</span></h1>
+
+    <!-- Score Card -->
+    <div class="score-card">
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#00d4ff"/>
+              <stop offset="100%" stop-color="#7c3aed"/>
+            </linearGradient>
+          </defs>
+          <circle class="ring-bg"   cx="60" cy="60" r="54"/>
+          <circle class="ring-fill" cx="60" cy="60" r="54" id="ringFill"/>
+        </svg>
+        <div class="score-text">
+          <span class="score-number" id="scoreNumber">0%</span>
+          <span class="score-pct">match</span>
+        </div>
+      </div>
+
+      <div class="score-info">
+        <div class="score-label" id="scoreLabel">Calculating...</div>
+        <div class="score-desc" id="scoreDesc">Comparing your resume against the job description...</div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Matched Skills -->
+    {% if matched_skills %}
+    <div class="section-card green" style="animation-delay: 0.3s">
+      <div class="section-title green">✅ Skills Present in Your Resume</div>
+      <div class="tags">
+        {% for skill in matched_skills %}
+          <span class="tag green">{{ skill }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Missing Skills -->
+    {% if missing_skills %}
+    <div class="section-card red" style="animation-delay: 0.4s">
+      <div class="section-title red">❌ Missing Skills to Add</div>
+      <div class="tags">
+        {% for skill in missing_skills %}
+          <span class="tag red">{{ skill }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Suggestions -->
+    {% if suggestions %}
+    <div class="section-card yellow" style="animation-delay: 0.5s">
+      <div class="section-title yellow">💡 Suggestions to Improve</div>
+      {% for tip in suggestions %}
+        <div class="suggestion-item">
+          <span class="suggestion-num">{{ loop.index }}</span>
+          <span>{{ tip }}</span>
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- CTA -->
+    <div class="btn-wrap">
+      <a href="/" class="btn-back">← Analyze Another Resume</a>
+    </div>
+
+    <footer>
+      Built with <span>♥</span> · AI Resume Analyzer · All files processed locally
+    </footer>
+
+  </div>
+
+  <script>
+    // Inject match score from Jinja
+   const rawScore = parseFloat("{{ match_score }}");
+    const circumference = 339.29;
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        // Animate number counter
+        const numEl = document.getElementById('scoreNumber');
+        let current = 0;
+        const step = rawScore / 60;
+        const timer = setInterval(() => {
+          current = Math.min(current + step, rawScore);
+          numEl.textContent = Math.round(current) + '%';
+          if (current >= rawScore) clearInterval(timer);
+        }, 16);
+
+        // Animate ring
+        const offset = circumference - (rawScore / 100) * circumference;
+        document.getElementById('ringFill').style.strokeDashoffset = offset;
+
+        // Animate progress bar
+        document.getElementById('progressFill').style.width = rawScore + '%';
+
+        // Score label & description
+        const label = document.getElementById('scoreLabel');
+        const desc  = document.getElementById('scoreDesc');
+        if (rawScore >= 70) {
+          label.textContent = '🔥 Strong Match';
+          label.style.color = 'var(--success)';
+          desc.textContent  = 'Your resume is well-aligned with this job. Focus on the missing skills to stand out even more.';
+        } else if (rawScore >= 40) {
+          label.textContent = '⚡ Moderate Match';
+          label.style.color = 'var(--warn)';
+          desc.textContent  = 'There is a reasonable overlap. Add the missing skills and follow the suggestions to strengthen your application.';
+        } else {
+          label.textContent = '📉 Low Match';
+          label.style.color = 'var(--danger)';
+          desc.textContent  = 'Your resume needs significant improvement to align with this job description. Review the suggestions carefully.';
+        }
+      }, 100);
+    });
+  </script>
+</body>
+</html>
