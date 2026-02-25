@@ -4,6 +4,8 @@ An AI-powered resume analyzer that compares your resume against a job descriptio
 
 ---
 
+
+
 ## 🚀 How to Run
 
 ### ▶️ Option 1 — Streamlit (Recommended, Ready to Run)
@@ -56,6 +58,8 @@ AI Resume Analyzer/
 
 ---
 
+
+
 ## ⚙️ Installation
 ```bash
 git clone https://github.com/YOUR_USERNAME/ai-resume-analyzer.git
@@ -74,3 +78,24 @@ Make sure your `requirements.txt` is up to date before pushing:
 ```bash
 pip freeze > requirements.txt
 ```
+🎯 Use Case
+
+- Students preparing for placements
+
+- Freshers applying for internships
+
+- Professionals optimizing resumes
+
+- AI/NLP portfolio demonstration
+
+📌 Future Improvements
+
+- Resume-to-Job Description Matching
+
+- ATS Compatibility Checker
+
+- Grammar Enhancement using LLM
+
+- Dashboard with Skill Analytics
+
+- Deployment on Streamlit / Render
