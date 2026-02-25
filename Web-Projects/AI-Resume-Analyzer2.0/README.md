@@ -5,6 +5,8 @@ An AI-powered resume analyzer that compares your resume against a job descriptio
 ---
 
 
+![AI Resume Analyzer Banner](./banner.png)
+
 
 ## 🚀 How to Run
 
