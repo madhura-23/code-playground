@@ -3,7 +3,6 @@
 A professional-grade **comparable company analysis tool** for valuing companies using multiples-based valuation. Compare your target company against peer companies using key financial multiples like **P/E Ratio** and **EV/EBITDA**.
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 
 ## 📋 Overview
@@ -245,9 +244,6 @@ Implied Stock Price = Implied EV / Shares Outstanding
 - Compare to historical trading multiples
 - Don't ignore qualitative factors
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🤝 Contributing
 
@@ -276,20 +272,6 @@ Contributions are welcome! Feel free to:
 - Manual calculation only (no automated data feeds)
 - Limited to per-share analysis
 
-## 🚧 Future Enhancements
-
-Planned features for future versions:
-- [ ] Save/load valuations to localStorage
-- [ ] Import peer data from CSV
-- [ ] Additional valuation multiples (Price/Sales, PEG ratio, etc.)
-- [ ] Peer group comparison charts
-- [ ] Valuation sensitivity analysis
-- [ ] Historical multiple trends
-- [ ] Industry average data
-- [ ] Export to PDF report
-- [ ] Dark/light theme toggle
-
-## 📞 Support
 
 ### Getting Help
 - Check the [FAQ](#faq) section below
@@ -341,14 +323,13 @@ A: This tool is educational. Professional valuations should include DCF analysis
 - Portfolio Analysis Tools
 
 ## 👨‍💻 Author
-
+Miss Madhura Bhatt.
 Created as a tool for financial analysis and education.
 
 ## 🙏 Acknowledgments
 
 - Built with vanilla HTML/CSS/JavaScript
 - Inspired by professional valuation methodologies
-- Thanks to all contributors and users
 - Financial theory foundation: Corporate Finance principles
 
 ## 📊 Project Stats
@@ -368,5 +349,3 @@ Created as a tool for financial analysis and education.
 For issues, suggestions, or contributions, please open an issue or pull request on GitHub.
 
 ---
-
-**Remember**: This tool is designed for educational and analytical purposes. Always consult with financial professionals for investment decisions.
