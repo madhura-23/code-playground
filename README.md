@@ -1,90 +1,16 @@
-<h1 align="center">Code Playground 💜</h1>
+# React + Vite
 
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
 
-<p align="center">
-  <img src="https://img.shields.io/github/stars/madhura-23/code-playground?style=for-the-badge&color=8b5cf6" />
-  <img src="https://img.shields.io/github/forks/madhura-23/code-playground?style=for-the-badge&color=7c3aed" />
-  <img src="https://img.shields.io/github/last-commit/madhura-23/code-playground?style=for-the-badge&color=a855f7" />
-</p>
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-<p align="center">
-  <img src="assets/codeplayground Madz.png" width="500" />
-</p>
-<p align="center">
-  <i><b>Experimenting, learning, and building — one commit at a time 💜</b></i>
-</p>
+## React Compiler
 
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-<p align="center"> <img src="https://img.shields.io/badge/Status-Actively%20Building-7B2CBF?style=for-the-badge" /> <img src="https://img.shields.io/badge/Theme-Purple%20Vibes-9D4EDD?style=for-the-badge" /> </p> <p align="center"> <img src="https://img.shields.io/badge/Python-Experimenting-7B2CBF?style=flat-square&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Machine%20Learning-Exploring-9D4EDD?style=flat-square&logo=scikitlearn&logoColor=white" /> <img src="https://img.shields.io/badge/Web%20Dev-Practice-C77DFF?style=flat-square&logo=html5&logoColor=white" /> <img src="https://img.shields.io/badge/SQL-Queries-5A189A?style=flat-square&logo=mysql&logoColor=white" /> </p>
-🎮 Welcome to Code Playground
+## Expanding the ESLint configuration
 
-Code Playground is my personal experimental space where I build, test, and learn through small projects, ML experiments, games, UI pages, and SQL practice.
-
-This repo reflects my learning journey — messy at times, exciting always, and constantly evolving 🚀
-```
-code-playground/
-│
-├── 📊 ML-Experiments/
-│   ├── basic_ml_models.py
-│   ├── data_preprocessing/
-│   └── practice_notebooks/
-│
-├── 🎮 Mini-Games/
-│   ├── python_games/
-│   └── logic_games/
-│
-├── 🌐 Web-Projects/
-│   ├── signup_pages/
-│   ├── login_forms/
-│   └── basic_ui_designs/
-│
-├── 🗄️ SQL-Practice/
-│   ├── basic_queries.sql
-│   ├── joins_subqueries.sql
-│   └── interview_questions.sql
-│
-├── ⚙️ misc-experiments/
-└── 📄 README.md
-```
-
-🛠 Tech Stack
-<p> <img src="https://img.shields.io/badge/Python-7B2CBF?style=for-the-badge&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Java-9D4EDD?style=for-the-badge&logo=java&logoColor=white" /> <img src="https://img.shields.io/badge/C%2FC++-C77DFF?style=for-the-badge&logo=cplusplus&logoColor=white" /> <img src="https://img.shields.io/badge/SQL-5A189A?style=for-the-badge&logo=mysql&logoColor=white" /> <img src="https://img.shields.io/badge/JavaScript-7B2CBF?style=for-the-badge&logo=javascript&logoColor=white" /> </p>
-🎯 Why This Repo Exists
-
-✨ Learn by doing
-✨ Experiment without pressure
-✨ Build consistency
-✨ Track progress publicly
-✨ Improve problem-solving & creativity
-
-This is a playground, not a polished product — and that’s the point 💜
-
-💜 Aesthetic & Vibe
-
-- Purple-themed creativity
-
-- Growth mindset
-
-- Curiosity-driven coding
-
-- Progress > Perfection
-
-
-📌 Disclaimer
-
-Some projects may be:
-
-- Small
-
-- Incomplete
-
-- Experimental
-
-Each folder represents learning in action, not final products.
-
-👩‍💻 About Me👻:
-
-I’m Madhura, a final-year AI Engineering student exploring AI, ML, Web Development, and Software Engineering, aiming to build strong fundamentals and impactful projects.
-
-If this repo helped or inspired you, consider giving it a ⭐
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
