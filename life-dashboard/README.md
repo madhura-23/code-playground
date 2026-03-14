@@ -68,14 +68,3 @@ npm run build
 - [vite-plugin-pwa](https://vite-pwa-org.netlify.app)
 - `localStorage` for persistence
 
----
-
-## Customization
-
-**Change currency:** Find `₹` in `App.jsx` → replace with your symbol  
-**Add habits:** Default habits are in `DEF_HABITS` array at the top of `App.jsx`  
-**Colors:** All design tokens are in the `C` object at the top  
-
----
-
-*Built with Claude. Your data, your device.*
