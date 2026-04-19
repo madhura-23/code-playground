@@ -97,5 +97,12 @@ Then open any `.ipynb` file to explore an experiment.
 [GitHub](https://github.com/madhura-23)
 
 ---
+📌 Key Highlights
+Multiple ML algorithms implemented
+Real dataset experimentation
+Classification and regression workflows
+Unsupervised learning implementation
+Recommendation system project
+Structured experimentation workflow
 
 > 💡 This is an evolving learning repository. Experiments are added as new algorithms and datasets are explored.
